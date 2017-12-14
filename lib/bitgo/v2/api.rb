@@ -278,6 +278,12 @@ module Bitgo
         call :post, "/#{coin}/wallet/#{wallet_id}/webhooks", add_webhook_params
       end
 
+      def simulate_webhook(coin, webhook_id)
+        simulate_webhook_params = {
+            webhookId: webhook_id,
+        }
+        call :post, "/#{coin}/webhooks/#{webhook_id}/simulate", simulate_webhook_params
+      end
 
       def remove_webhook(coin, wallet_id, type, url)
         remove_webhook_params = {
