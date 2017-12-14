@@ -280,7 +280,7 @@ module Bitgo
 
       def simulate_webhook(coin, webhook_id)
         simulate_webhook_params = {
-            webhookId: webhook_id,
+          webhook_id: webhook_id
         }
         call :post, "/#{coin}/webhooks/#{webhook_id}/simulate", simulate_webhook_params
       end
